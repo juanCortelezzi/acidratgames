@@ -1,10 +1,10 @@
 ---
-import { clsx } from 'clsx';
+import { clsx } from "clsx";
 
 interface Props {
   title: string;
   description?: string;
-  class?: string
+  class?: string;
 }
 ---
 
@@ -29,7 +29,12 @@ interface Props {
     />
     <title>{Astro.props.title}</title>
   </head>
-  <body class={clsx("p-5 font-mono text-slate-100 bg-slate-950 container max-w-screen-sm mx-auto", Astro.props.class)}>
+  <body
+    class={clsx(
+      "p-5 pb-8 font-mono text-slate-100 bg-slate-950 container max-w-screen-sm mx-auto",
+      Astro.props.class,
+    )}
+  >
     <slot />
   </body>
 </html>

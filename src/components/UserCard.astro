@@ -8,9 +8,14 @@ interface Props {
 
 <div>
   <div class="flex items-center space-x-8">
-    <div class="min-h-12 h-12 min-w-12 w-12 rounded bg-slate-800 shadow-inner shadow-slate-950 overflow-hidden relative">
-      <slot name="avatar"/>
-      <div class="absolute top-0 left-0 w-full h-full shadow-inner shadow-slate-950" />
+    <div
+      class="relative h-12 min-h-12 w-12 min-w-12 overflow-hidden rounded bg-slate-800 shadow-inner shadow-slate-950"
+    >
+      <slot name="avatar" />
+      <div
+        class="absolute left-0 top-0 h-full w-full shadow-inner shadow-slate-950"
+      >
+      </div>
     </div>
     <div>
       <div class="text-lg font-bold">{Astro.props.name}</div>
@@ -22,5 +27,10 @@ interface Props {
     <slot />
   </div>
   <div class="my-8"></div>
-  <div class="text-slate-400">Favourite games: {Astro.props.favouriteGames.join(", ")}</div>
+  <div
+    class="flex flex-col items-baseline space-y-1 text-slate-400 sm:flex-row sm:space-x-2 sm:space-y-0"
+  >
+    <div>Favourite games:</div>
+    <div>{Astro.props.favouriteGames.join(", ")}</div>
+  </div>
 </div>
