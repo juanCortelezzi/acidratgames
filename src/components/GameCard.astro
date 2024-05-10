@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  author: string;
+}
+---
+
+<div
+  class="mx-auto max-w-96 overflow-hidden rounded bg-slate-900 sm:flex sm:h-60 sm:max-w-full"
+>
+  <div class="h-48 overflow-hidden bg-slate-800 sm:min-h-60 sm:min-w-64">
+    <slot name="image" />
+  </div>
+
+  <div class="flex w-full flex-col justify-between space-y-8 p-6">
+    <div>
+      <div class="text-lg font-bold">{Astro.props.title}</div>
+      <div class="text-slate-500">
+        by <span class="text-slate-400">{Astro.props.author}</span>.
+      </div>
+    </div>
+    <div class="max-w-prose">
+      <slot name="description" />
+    </div>
+    <div>
+      <slot name="call_to_action" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import UserCard from "../components/UserCard.astro";
+import GameCard from "../components/GameCard.astro";
+import { Picture } from "astro:assets";
+import ShootRamImage from "../assets/shoot-ram.png";
+---
+
+<BaseLayout title="Acid Rat">
+  <h1 class="text-2xl font-bold">Acid Rat</h1>
+  <div class="my-2"></div>
+  <h2 class="text-xl text-slate-400">Saving our bacon for the last waffle.</h2>
+
+  <div class="my-12"></div>
+  <div class="text-xl">Our Minigames:</div>
+  <div class="my-6"></div>
+
+  <GameCard title="Shoot Ram" author="Acid Rat Games">
+    <Picture slot="image" src={ShootRamImage} alt="Shoot Ram demo" class="object-cover w-full h-full" loading="eager" />
+    <div slot="description">Blast and smash through asteroids to survive</div>
+    <button
+      slot="call_to_action"
+      class="w-full rounded bg-slate-800 px-6 py-2 text-center"
+    >
+      Play on itch.io
+    </button>
+  </GameCard>
+
+  <div class="my-12"></div>
+  <div class="text-xl">About Us:</div>
+  <div class="my-6"></div>
+
+  <div class="max-w-prose space-y-6">
+    <div>
+      We're creating Acid Rat Games with a goal of bringing quality to gamers!
+    </div>
+    <div>
+      We want to create a world where the players get what they want. Where
+      there are no scummy cash shops, no pay-to-win, no forced ads and where the
+      grind gets rewarded.
+    </div>
+  </div>
+
+  <div class="my-10"></div>
+
+  <UserCard
+    name="Marcel Visser"
+    role="Co-Founder"
+    favouriteGames={["Terraria", "Hades", "Risk of Rain"]}
+  >
+    My dream is to create games that players will enjoy. In modern game dev,
+    studios and publishers care more about money, than quality entertainment. I
+    want Acid Rat Games to become a studio where everyone enjoys our games and
+    everyone can enjoy an excellent gaming experience without breaking bank.
+  </UserCard>
+
+  <div class="my-10"></div>
+
+  <UserCard
+    name="Kenan Moolman"
+    role="Co-Founder"
+    favouriteGames={["Dark Souls", "Witcher 3", "Portal 2"]}
+  >
+    Serious gamer turned casual; I got into Game Development as a hobby to
+    explore my passions and I fell in love with the process. My dream is to turn
+    Acid Rat into a trustworthy studio that makes consistently fun and
+    interesting games that my friends, family, and hopefully a wider audience,
+    can enjoy.
+  </UserCard>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  avatarUrl?: string;
+  favouriteGames: string[];
+}
+---
+
+<div>
+  <div class="flex items-center space-x-8">
+    <div class="h-12 w-12 rounded bg-slate-800"></div>
+    <div>
+      <div class="text-lg font-bold">{Astro.props.name}</div>
+      <div class="text-slate-400">{Astro.props.role}</div>
+    </div>
+  </div>
+  <div class="my-8"></div>
+  <div class="max-w-prose">
+    <slot />
+  </div>
+  <div class="my-8"></div>
+  <div class="text-slate-400">Favourite games: {Astro.props.favouriteGames.join(", ")}</div>
+</div>
