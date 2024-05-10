@@ -8,9 +8,9 @@ interface Props {
 ---
 
 <div>
-  <div class="flex items-center space-x-8">
+  <div class="flex items-center sm:space-x-8">
     <div
-      class="relative h-14 min-h-14 w-14 min-w-14 overflow-hidden rounded bg-slate-800 shadow-inner shadow-slate-950"
+      class="relative hidden overflow-hidden rounded bg-slate-800 shadow-inner shadow-slate-950 sm:block sm:h-14 sm:min-h-14 sm:w-14 sm:min-w-14"
     >
       <slot name="avatar" />
       <div
@@ -18,15 +18,16 @@ interface Props {
       >
       </div>
     </div>
-    <div>
+    <div class="space-y-2">
       <div
         class="text-lg font-bold underline decoration-pink-400 underline-offset-4"
       >
         {Astro.props.name}
       </div>
-      <div class="text-slate-400">
-        {Astro.props.role}
-        {Astro.props.email ? `| ${Astro.props.email}` : null}
+      <div class="text-slate-400 sm:space-x-2 sm:flex">
+        <div>{Astro.props.role}</div>
+        {Astro.props.email ? <div class="hidden sm:block">|</div> : null}
+        {Astro.props.email ? <div>{Astro.props.email}</div> : null}
       </div>
     </div>
   </div>
