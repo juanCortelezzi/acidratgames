@@ -7,12 +7,23 @@ import { Picture } from "astro:assets";
 import ShootRamImage from "../assets/shoot-ram.png";
 import MarcelAvatar from "../assets/marcel-icon.png";
 import KenanAvatar from "../assets/kenan-icon.jpeg";
+import DiscordLogo from "../assets/discord-logo.svg";
+import InstagramLogo from "../assets/instagram-logo.svg";
 ---
 
-<BaseLayout title="Acid Rat">
+<BaseLayout title="Acid Rat Games">
   <h1 class="text-2xl font-bold text-lime-400">Acid Rat</h1>
   <div class="my-2"></div>
   <h2 class="text-xl text-slate-400">Saving our bacon for the last waffle.</h2>
+  <div class="my-4"></div>
+  <div class="flex space-x-4">
+    <a href="https://discord.gg/fDbZDj78PT" target="_blank">
+      <img src={DiscordLogo.src} alt="Discord" class="h-5 w-5" />
+    </a>
+    <a href="https://www.instagram.com/acid_rat_games/" target="_blank">
+      <img src={InstagramLogo.src} alt="Instagram" class="h-5 w-5" />
+    </a>
+  </div>
 
   <div class="my-14"></div>
   <div class="text-lg">Our Minigames:</div>
@@ -31,7 +42,7 @@ import KenanAvatar from "../assets/kenan-icon.jpeg";
       slot="call_to_action"
       target="_blank"
       href="https://acidratgames.itch.io/shoot-ram"
-      class="block w-full rounded bg-lime-400 px-6 py-2 text-center font-bold text-slate-950 shadow-md shadow-lime-950 hover:bg-pink-400 hover:shadow-pink-950 transition-all duration-200 ease-in-out cursor-pointer"
+      class="block w-full cursor-pointer rounded bg-lime-400 px-6 py-2 text-center font-bold text-slate-950 shadow-md shadow-lime-950 transition-all duration-200 ease-in-out hover:bg-pink-400 hover:shadow-pink-950"
     >
       Play on itch.io
     </a>
@@ -58,6 +69,7 @@ import KenanAvatar from "../assets/kenan-icon.jpeg";
     name="Marcel Visser"
     role="Co-Founder"
     favouriteGames={["Terraria", "Hades", "Risk of Rain"]}
+    email="marcel.visser@acidratgames.com"
   >
     <Picture
       slot="avatar"
@@ -78,6 +90,7 @@ import KenanAvatar from "../assets/kenan-icon.jpeg";
     name="Kenan Moolman"
     role="Co-Founder"
     favouriteGames={["Dark Souls", "Witcher 3", "Portal 2"]}
+    email="kenan.moolman@acidratgames.com"
   >
     <Picture
       slot="avatar"

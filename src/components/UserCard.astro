@@ -3,13 +3,14 @@ interface Props {
   name: string;
   role: string;
   favouriteGames: string[];
+  email?: string;
 }
 ---
 
 <div>
   <div class="flex items-center space-x-8">
     <div
-      class="relative h-12 min-h-12 w-12 min-w-12 overflow-hidden rounded bg-slate-800 shadow-inner shadow-slate-950"
+      class="relative h-14 min-h-14 w-14 min-w-14 overflow-hidden rounded bg-slate-800 shadow-inner shadow-slate-950"
     >
       <slot name="avatar" />
       <div
@@ -23,7 +24,10 @@ interface Props {
       >
         {Astro.props.name}
       </div>
-      <div class="text-slate-400">{Astro.props.role}</div>
+      <div class="text-slate-400">
+        {Astro.props.role}
+        {Astro.props.email ? `| ${Astro.props.email}` : null}
+      </div>
     </div>
   </div>
   <div class="my-6"></div>
