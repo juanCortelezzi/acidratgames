@@ -2,14 +2,16 @@
 interface Props {
   name: string;
   role: string;
-  avatarUrl?: string;
   favouriteGames: string[];
 }
 ---
 
 <div>
   <div class="flex items-center space-x-8">
-    <div class="h-12 w-12 rounded bg-slate-800"></div>
+    <div class="min-h-12 h-12 min-w-12 w-12 rounded bg-slate-800 shadow-inner shadow-slate-950 overflow-hidden relative">
+      <slot name="avatar"/>
+      <div class="absolute top-0 left-0 w-full h-full shadow-inner shadow-slate-950" />
+    </div>
     <div>
       <div class="text-lg font-bold">{Astro.props.name}</div>
       <div class="text-slate-400">{Astro.props.role}</div>

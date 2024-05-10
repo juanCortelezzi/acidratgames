@@ -3,7 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import UserCard from "../components/UserCard.astro";
 import GameCard from "../components/GameCard.astro";
 import { Picture } from "astro:assets";
+
 import ShootRamImage from "../assets/shoot-ram.png";
+import MarcelAvatar from "../assets/marcel-icon.png";
+import KenanAvatar from "../assets/kenan-icon.jpeg";
 ---
 
 <BaseLayout title="Acid Rat">
@@ -16,7 +19,13 @@ import ShootRamImage from "../assets/shoot-ram.png";
   <div class="my-6"></div>
 
   <GameCard title="Shoot Ram" author="Acid Rat Games">
-    <Picture slot="image" src={ShootRamImage} alt="Shoot Ram demo" class="object-cover w-full h-full" loading="eager" />
+    <Picture
+      slot="image"
+      src={ShootRamImage}
+      alt="Shoot Ram demo"
+      class="h-full w-full object-cover"
+      loading="eager"
+    />
     <div slot="description">Blast and smash through asteroids to survive</div>
     <button
       slot="call_to_action"
@@ -48,10 +57,17 @@ import ShootRamImage from "../assets/shoot-ram.png";
     role="Co-Founder"
     favouriteGames={["Terraria", "Hades", "Risk of Rain"]}
   >
-    My dream is to create games that players will enjoy. In modern game dev,
-    studios and publishers care more about money, than quality entertainment. I
-    want Acid Rat Games to become a studio where everyone enjoys our games and
-    everyone can enjoy an excellent gaming experience without breaking bank.
+    <Picture
+      slot="avatar"
+      src={MarcelAvatar}
+      alt="Marcel Visser"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    />
+    My dream is to create games that players will enjoy. In modern game dev, studios
+    and publishers care more about money, than quality entertainment. I want Acid
+    Rat Games to become a studio where everyone enjoys our games and everyone can
+    enjoy an excellent gaming experience without breaking bank.
   </UserCard>
 
   <div class="my-10"></div>
@@ -61,10 +77,16 @@ import ShootRamImage from "../assets/shoot-ram.png";
     role="Co-Founder"
     favouriteGames={["Dark Souls", "Witcher 3", "Portal 2"]}
   >
-    Serious gamer turned casual; I got into Game Development as a hobby to
-    explore my passions and I fell in love with the process. My dream is to turn
-    Acid Rat into a trustworthy studio that makes consistently fun and
-    interesting games that my friends, family, and hopefully a wider audience,
-    can enjoy.
+    <Picture
+      slot="avatar"
+      src={KenanAvatar}
+      alt="Kenan Moolman"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    />
+    Serious gamer turned casual; I got into Game Development as a hobby to explore
+    my passions and I fell in love with the process. My dream is to turn Acid Rat
+    into a trustworthy studio that makes consistently fun and interesting games that
+    my friends, family, and hopefully a wider audience, can enjoy.
   </UserCard>
 </BaseLayout>
